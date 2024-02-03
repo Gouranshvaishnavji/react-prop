@@ -27,4 +27,20 @@ export default class AppClass extends Component{
   }
 
   // code here
+  render(){
+    const getimg = this.imageData();
+    return(
+      <>
+      <h1>Kalvium GallerY</h1>
+      <div className="body">
+        {getimg.map((ele)=>{
+          return <img key={ele.id} src={ele.img}  alt={"elephant-image"} />
+        })}
+      </div>
+      <footer>
+      <p>Created by <a href="https://www.instagram.com/gouranshvaishnav/" target="_blank">Gouransh</a> with kalvium</p>
+    </footer>
+      </>
+    )
+  }
 }
