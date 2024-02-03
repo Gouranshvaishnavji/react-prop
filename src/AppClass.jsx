@@ -1,46 +1,23 @@
-import { Component } from "react";
-import "./App.css"
-import elephant from "./images/elephant.jpeg";
+import React, { Component } from "react";
+import "./App.css";
 
-export default class AppClass extends Component{
-  
-  imageData = ()=>{
-    let data = [
-      {
-        id:1,
-        img:elephant
-      },
-      {
-        id:2,
-        img:elephant
-      },
-      {
-        id:3,
-        img:elephant
-      },
-      {
-        id:4,
-        img:elephant
-      }
-    ]
-    return data;
-  }
-
-  // code here
-  render(){
-    const getimg = this.imageData();
-    return(
-      <>
-      <h1>Kalvium GallerY</h1>
-      <div className="body">
-        {getimg.map((ele)=>{
-          return <img key={ele.id} src={ele.img}  alt={"elephant-image"} />
-        })}
-      </div>
-      <footer>
+export default class AppClass extends Component {
+  render() {
+    const imgData = this.props.myData();
+    return (
+      <div>
+        <h1>Kalvium Gallary</h1>
+        <div className="body">
+          {imgData.map((image,index) => (
+            <div className="" key={index}>
+              <img src={image.img} alt="" />
+            </div>
+          ))}
+        </div>
+        <footer>
       <p>Created by <a href="https://www.instagram.com/gouranshvaishnav/" target="_blank">Gouransh</a> with kalvium</p>
     </footer>
-      </>
-    )
+      </div>
+    );
   }
 }
